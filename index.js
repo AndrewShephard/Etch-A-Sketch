@@ -33,16 +33,11 @@ grid.addEventListener('mouseover', function(e){
       }
 });
 
-function removeColor(e) {
-    e.target.classList.remove('filledIn');
-}
+
 
 function reset() {
     const boxes = Array.from(document.querySelectorAll('div.box.filledIn'));
-    boxes.forEach(box => {
-        box.target.classList.remove('filledIn')
-    })
-    createGrid(squareSize);
-  }
+    boxes.forEach(box => box.style.backgroundColor = "#f5f5f5");
+}
 
   resetBtn.addEventListener('click', reset);
