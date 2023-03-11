@@ -49,3 +49,7 @@ html {
  .box.filledIn{
    background-color: black;
  }
+
+ .box.erase{
+  background-color: #f5f5f5;
+}
