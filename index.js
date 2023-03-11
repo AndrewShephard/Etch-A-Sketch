@@ -26,7 +26,6 @@ function createGrid(gridSize) {
       grid.appendChild(createDiv(grid.clientWidth / gridSize));
     }
   }
-  console.log(grid.clientWidth)
 }
 
 function draw(){
@@ -54,7 +53,19 @@ grid.addEventListener('mouseover', function(e){
 
 function reset() {
     const boxes = Array.from(document.querySelectorAll('div.box.filledIn'));
-    boxes.forEach(box => box.style.backgroundColor = "#f5f5f5");
+    // boxes.forEach(box => {
+    //   box.style.backgroundColor = "#f5f5f5";
+    // });
+    boxes.forEach(box => {
+      if (box.classList.contains('filledIn')){
+        box.classList.remove('filledIn');
+        console.log("filled box:" + box);
+      }
+      if (box.classList.contains('erase')){
+        box.classList.remove('erase');
+      }
+    });
+    createGrid();
     draw();
 }
 
